@@ -36,31 +36,31 @@ public class Main {
             error = isThereErrorShot(input);
             System.out.println();
         }
-        fog.takeShot(input, player); // player for table output
+        fog.takeShot(input);
         return fog.isGameEnd();
     }
 
     static @NotNull Table getTableFromInput(){
-        Table table = new Table();
+        Table table = new Table(true);
         Ships ships = new Ships();
         List<String> input = null;
         boolean error;
 
-        table.showField();
-        Ships.Ship ship = ships.nextShip();
-        while (ship != null) {
-            System.out.println("Enter the coordinates of the " + ship.getName() +
-                    "(" + ship.getLength() + " cells):\n");
-            error = true;
-            while (error) {
-                input = getInput();
-                error = isThereErrorPlacing(ship, input, table);
-                System.out.println();
-            }
-            table.placeShip(input);
-            ship = ships.nextShip();
-            table.showField();
-        }
+//        table.showField();
+//        Ships.Ship ship = ships.nextShip();
+//        while (ship != null) {
+//            System.out.println("Enter the coordinates of the " + ship.getName() +
+//                    "(" + ship.getLength() + " cells):\n");
+//            error = true;
+//            while (error) {
+//                input = getInput();
+//                error = isThereErrorPlacing(ship, input, table);
+//                System.out.println();
+//            }
+//            table.placeShip(input);
+//            ship = ships.nextShip();
+//            table.showField();
+//        }
         return table;
     }
 

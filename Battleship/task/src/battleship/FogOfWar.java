@@ -52,17 +52,15 @@ public class FogOfWar {
     }
 
     // also shows field (from player instance)
-    void takeShot(@NotNull List<String> coordinates, Players.Player player) {
+    void takeShot(@NotNull List<String> coordinates) {
         int i = table.getIndexByLetter(coordinates.get(0));
         int j = table.getIndexByNumber(coordinates.get(1));
 
         if (table.get(i, j).equals("X")) {
-            player.showField();
             System.out.println("You hit a ship!\n");
             return;
         }
         if (table.get(i, j).equals("M")) {
-//            player.showField();
             System.out.println("You missed!");
             return;
         }
@@ -70,11 +68,9 @@ public class FogOfWar {
         boolean result = table.takeShot(coordinates);
         if (!result) {
             set("M", i, j);
-//            player.showField();
             System.out.println("You missed!");
         } else {
             set("X", i, j);
-            player.showField();
             List<List<String>> copy = new ArrayList<>(table.field.size());
             for ( int iii = 0; iii < table.field.size(); iii++ ) {
                 copy.add(new ArrayList<>());
