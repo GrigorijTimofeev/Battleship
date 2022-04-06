@@ -51,7 +51,6 @@ public class FogOfWar {
                 checkIfDestroyed(copy, i, j + 1) && checkIfDestroyed(copy, i, j - 1));
     }
 
-    // also shows field (from player instance)
     void takeShot(@NotNull List<String> coordinates) {
         int i = table.getIndexByLetter(coordinates.get(0));
         int j = table.getIndexByNumber(coordinates.get(1));
