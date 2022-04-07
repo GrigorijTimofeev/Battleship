@@ -1,6 +1,7 @@
 # Battleship
 Simple 2 players console battleship game on Java
-Errors heandaling
+
+Errors handling 
 
 ### Filling table with ships one at a time
 
